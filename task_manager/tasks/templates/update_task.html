@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task</title>
+</head>
+<body>
+
+<h1>Update Task: {{ task.title }}</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <label for="{{ form.title.id_for_label }}">Title:</label>
+    {{ form.title }}
+    <br><br>
+
+    <label for="{{ form.description.id_for_label }}">Description:</label>
+    {{ form.description }}
+    <br><br>
+
+    <label for="{{ form.due_date.id_for_label }}">Due Date:</label>
+    {{ form.due_date }}
+    <br><br>
+
+    <label for="{{ form.is_completed.id_for_label }}">Completed:</label>
+    {{ form.is_completed }}
+    <br><br>
+
+    <button type="submit">Update Task</button>
+</form>
+
+</body>
+</html>
